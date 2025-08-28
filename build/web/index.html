@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Murach's Java Servlets and JSP</title>
+  <link rel="stylesheet" href="styles/newcss.css" type="text/css"/>
+</head>
+<body>
+  <form action="emailList" method="post">
+    <img src="images/Murach_image.jpg" alt="Company Logo" width="450" height="250">
+
+    <h2>Survey</h2>
+    <p>If you have a moment we'd appreciate it if you would fill out this survey</p>
+
+    <h2>Your Information</h2>
+    <input type="hidden" name="action" value="add">
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label>First Name:</label>
+      <input type="text" name="firstName" required>
+    </div>
+
+    <div class="form-group">
+      <label>Last Name:</label>
+      <input type="text" name="lastName" required>
+    </div>
+
+    <div class="form-group">
+      <label>Date of Birth:</label>
+      <input type="date" name="dayofbirth" required>
+    </div>
+
+    <h2>How did you hear about us?</h2>
+    <div class="radio-group">
+      <label><input type="radio" name="source" value="Search engine" checked> Search engine</label><br>
+      <label><input type="radio" name="source" value="Word of mouth"> Word of mouth</label><br>
+      <label><input type="radio" name="source" value="Social Media"> Social Media</label><br>
+      <label><input type="radio" name="source" value="Other"> Other</label>
+    </div>
+
+    <h2>Would you like to receive announcements?</h2>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="announce1" value="YES, I'd like that."> YES, I'd like that.</label><br>
+      <label><input type="checkbox" name="announce2" value="YES, please send me email announcements."> YES, please send me email announcements.</label>
+    </div>
+
+    <h2>Please contact me by:</h2>
+    <div class="form-group">
+      <select name="contact">
+        <option value="Email or postal mail">Email or postal mail</option>
+        <option value="Email only">Email only</option>
+        <option value="Postal mail only">Postal mail only</option>
+      </select>
+    </div>
+
+    <input type="submit" value="Submit" id="submit">
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const inputs = document.querySelectorAll("input[required], textarea[required], select[required]");
+        inputs.forEach(input => {
+            input.oninvalid = function(e) {
+                e.target.setCustomValidity("Vui lòng không để trống");
+            };
+            input.oninput = function(e) {
+                e.target.setCustomValidity("");
+            };
+        });
+    });
+</script>
+  </form>
+    
+</body>
+</html>

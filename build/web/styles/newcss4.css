@@ -1,0 +1,59 @@
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+h2 { 
+    color: teal;
+}
+
+/* Label chung: inline để nằm cùng dòng với span */
+label {
+    display: inline-block;    
+    width: 12em;              /* đủ dài cho "Preferred contact method" */
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+span {
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+/* --- chỉ áp dụng cho Announcements --- */
+.announcements {
+    display: flex;
+    align-items: flex-start;
+}
+
+.announcements label {
+    width: 12em;        /* giữ label 1 cột bên trái */
+    font-weight: bold;
+}
+
+.announcements .values {
+    flex: 1;            /* nội dung YES… nằm cột bên phải */
+}
+
+.announcements .values span {
+    display: block;     /* mỗi YES xuống dòng */
+    margin-bottom: 0.3em;
+}
+
+
+input[type="text"], input[type="email"], input[type="date"] {
+    width: 15em;
+    margin-left: 0.5em;    
+    margin-bottom: 0.5em;
+}
+
+br {
+    clear: both;
+}
+
+#submit {
+    margin-left: 0.5em;
+}
